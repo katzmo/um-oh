@@ -1,0 +1,56 @@
+/* 
+ * Basic styles and resets
+ */
+
+:root {
+  --fg-color: #303030;
+  --bg-color: #f0f0f0;
+  --hl-color: #ffffff;
+}
+
+html {
+  font-size: min(3vw, 100%);
+}
+
+body {
+  font-family: Courier, monospace;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  line-height: 1.33;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 12vh 6vw;
+  max-width: 80rem;
+  margin: auto;
+}
+
+h1 {
+  border-bottom: 0.25rem solid;
+}
+
+button,
+.button {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  display: inline-block;
+  background-color: transparent;
+  color: var(--fg-color);
+  text-decoration: none;
+  border: 0.125rem solid var(--fg-color);
+  box-shadow: 0 0.125rem var(--fg-color);
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+button:hover,
+.button:hover {
+  background-color: var(--hl-color);
+}
+button:active,
+.button:active {
+  box-shadow: none;
+  transform: translateY(0.125rem);
+}
