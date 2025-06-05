@@ -1,0 +1,40 @@
+/* 
+ * Drag and drop styles
+ */
+
+/* draggable elements */
+.draggable {
+  border: 0.125rem solid var(--fg-color);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.draggable[draggable="true"] {
+  background-color: var(--hl-color);
+  cursor: grab;
+}
+.draggable:active,
+.draggable.grabbed {
+  cursor: grabbing;
+}
+
+/* dropzone elements */
+.dropzone {
+  position: relative;
+  width: 100%;
+  border: 0.125rem dashed var(--fg-color);
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+.dropzone.active {
+  background-color: var(--hl-color);
+}
+.dropzone .match,
+.dropzone .mismatch {
+  display: none;
+}
+.dropzone[data-solved="1"] .match,
+.dropzone[data-solved="0"] .mismatch {
+  display: block;
+}

@@ -31,6 +31,19 @@ h1 {
   border-bottom: 0.25rem solid;
 }
 
+a {
+  color: var(--fg-color);
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+a:hover,
+a:focus {
+  text-decoration-thickness: 0.25rem;
+}
+a:active {
+  text-underline-offset: 0.125rem;
+}
+
 button,
 .button {
   font-size: inherit;

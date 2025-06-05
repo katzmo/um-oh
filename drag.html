@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UM-OH</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/drag.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Drag & Drop</h1>
+
+      <section>
+        <h2>Draggables</h2>
+        <div class="draggable" draggable="true" id="a">Drag to A</div>
+        <div class="draggable" draggable="true" id="b">Drag to B</div>
+        <div class="draggable" draggable="true" id="c">Drag to C</div>
+        <div class="draggable" draggable="true" id="d">Drag to D</div>
+      </section>
+
+      <section>
+        <h2>Dragzones</h2>
+        <div class="dropzone" data-drop="a">
+          <p class="good-match bubble">Yeah!</p>
+          <p class="bad-match bubble">No.</p>
+          <p>Dropzone A</p>
+        </div>
+        <div class="dropzone" data-drop="b">
+          <p class="good-match bubble">Yeah!</p>
+          <p class="bad-match bubble">No.</p>
+          <p>Dropzone B</p>
+        </div>
+        <div class="dropzone" data-drop="c">
+          <p class="good-match bubble">Yeah!</p>
+          <p class="bad-match bubble">No.</p>
+          <p>Dropzone C</p>
+        </div>
+        <div class="dropzone" data-drop="d">
+          <p class="good-match bubble">Yeah!</p>
+          <p class="bad-match bubble">No.</p>
+          <p>Dropzone D</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts/drag.js"></script>
+  </body>
+</html>
