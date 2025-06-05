@@ -1,0 +1,62 @@
+/* 
+ * Item page styles
+ */
+
+@import "./drag.css";
+
+#item-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: min(6vw, 6rem);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  padding: 3rem min(6vw, 6rem);
+  margin-bottom: 3rem;
+}
+#item-info img {
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 35em) {
+  #draggables-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  #item-info {
+    flex-wrap: nowrap;
+  }
+  #item-info figure {
+    flex: 1 0 44%;
+  }
+  #dropzones-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .dropzone {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  #draggables-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .dropzone .inner-wrapper {
+    background-size: 8rem;
+    padding-left: 9rem;
+    min-height: 10rem;
+  }
+  .bubble {
+    margin-bottom: 2rem;
+  }
+}

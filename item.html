@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UM-OH</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/item.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>You found Venus of Willendorf!</h1>
+      <section id="item-info">
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Vienna_-_Willendorf_Venus_Natural_History_Museum_-_6190.jpg/500px-Vienna_-_Willendorf_Venus_Natural_History_Museum_-_6190.jpg"
+            alt="Venus of Willendorf"
+          />
+          <figcaption>
+            © Jorge Royan / http://www.royan.com.ar / CC BY-SA 3.0
+          </figcaption>
+        </figure>
+        <div>
+          <h2>Venus of Willendorf</h2>
+          <p>
+            The Venus of Willendorf is a small statuette, estimated to have been
+            carved 29,500 years ago. It was recovered in 1908 from an
+            archeological dig near Willendorf, Austria. The statuette is 11.1 cm
+            (4.4 inches) tall and is made from oolitic limestone, originally
+            colored with red ochre. Similar figures have been found from France
+            to Russia.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>So... who said what?</h2>
+        <p>Match each label to a contributer by dragging it there.</p>
+        <div id="draggables-wrapper">
+          <div class="draggable" draggable="true" id="a">Fertility idol</div>
+          <div class="draggable" draggable="true" id="b">
+            Self-representation
+          </div>
+          <div class="draggable" draggable="true" id="c">Ancient secret</div>
+          <div class="draggable" draggable="true" id="d">Icon of matriachy</div>
+        </div>
+        <div id="dropzones-wrapper">
+          <div class="dropzone" data-drop="a">
+            <div class="inner-wrapper">
+              <p class="bubble match">
+                Yes! The figure played an important part in early spiritual
+                practices. The body shape indicates a symbol of fertiliy,
+                perhaps it represented a godess watching over the cycle of life.
+              </p>
+              <p class="bubble mismatch">What nonsense!</p>
+              <p>Archaeologist, 1910s</p>
+            </div>
+          </div>
+          <div class="dropzone" data-drop="d">
+            <div class="inner-wrapper">
+              <p class="bubble match">
+                Exactly! Feminists consider it the Great Mother turned into
+                stone in support of the matriarchal theory. It counters
+                patriachal narratives by celebrating female power.
+              </p>
+              <p class="bubble mismatch">I disagree.</p>
+              <p>Feminist theorist, 1970s</p>
+            </div>
+          </div>
+          <div class="dropzone" data-drop="b">
+            <div class="inner-wrapper">
+              <p class="bubble match">
+                That‘s right. The statue might be a self-carved image reflecting
+                how prehistoric women saw themselves, distorted by their
+                viewpoint of their own body.
+              </p>
+              <p class="bubble mismatch">I‘d like to challenge this view.</p>
+              <p>Anthropologist, 1990s</p>
+            </div>
+          </div>
+          <div class="dropzone" data-drop="c">
+            <div class="inner-wrapper">
+              <p class="bubble match">
+                Yeah! It turned out to be the key for building time machines.
+                But I'm not allowed to tell you more, sorry.
+              </p>
+              <p class="bubble mismatch">This ascription is outdated.</p>
+              <p>Time traveller, 2130s</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts/drag.js"></script>
+  </body>
+</html>

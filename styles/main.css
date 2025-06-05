@@ -27,8 +27,21 @@ main {
   margin: auto;
 }
 
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 h1 {
   border-bottom: 0.25rem solid;
+}
+
+figcaption {
+  font-size: 0.75em;
 }
 
 a {

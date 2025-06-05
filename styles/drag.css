@@ -30,6 +30,26 @@
 .dropzone.active {
   background-color: var(--hl-color);
 }
+.dropzone .inner-wrapper {
+  background: url("/icons/user.svg") no-repeat bottom left;
+  background-size: 6rem;
+  padding-left: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 8rem;
+}
+
+/* feedback elements */
+.bubble {
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  hyphens: auto;
+  margin-bottom: 0;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  border-bottom-left-radius: 0;
+}
 .dropzone .match,
 .dropzone .mismatch {
   display: none;
