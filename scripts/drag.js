@@ -13,7 +13,7 @@
  * - dropzone.dataset.drop: The id of the correct draggable for this dropzone.
  */
 
-;(() => {
+export default () => {
   const draggables = document.querySelectorAll(".draggable")
   const dropzones = document.querySelectorAll(".dropzone")
   const draggingClass = "grabbed"
@@ -129,4 +129,4 @@
       }
     })
   }
-})()
+}

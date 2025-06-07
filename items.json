@@ -1,0 +1,40 @@
+{
+  "key-1": {
+    "name": "Venus of Willendorf",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Vienna_-_Willendorf_Venus_Natural_History_Museum_-_6190.jpg/500px-Vienna_-_Willendorf_Venus_Natural_History_Museum_-_6190.jpg",
+      "caption": "© Jorge Royan / http://www.royan.com.ar / CC BY-SA 3.0"
+    },
+    "description": "The Venus of Willendorf is a small statuette, estimated to have been carved 29,500 years ago. It was recovered in 1908 from an archeological dig near Willendorf, Austria. The statuette is 11.1 cm (4.4 inches) tall and is made from oolitic limestone, originally colored with red ochre. Similar figures have been found from France to Russia.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Fertility idol",
+        "match": "Yes! The figure played an important part in early spiritual practices. The body shape indicates a symbol of fertility, perhaps it represented a goddess watching over the cycle of life.",
+        "mismatch": "What nonsense!",
+        "voice": "Archaeologist, 1910s"
+      },
+      {
+        "id": "b",
+        "text": "Icon of matriarchy",
+        "match": "Exactly! Feminists consider her the Great Mother turned into stone in support of the matriarchal theory. She counters patriarchal narratives by celebrating female power.",
+        "mismatch": "I disagree.",
+        "voice": "Feminist theorist, 1970s"
+      },
+      {
+        "id": "c",
+        "text": "Self-representation",
+        "match": "That‘s right. The statue might be a self-carved image reflecting how prehistoric women saw themselves, distorted by their viewpoint of their own body.",
+        "mismatch": "I‘d like to challenge this view.",
+        "voice": "Anthropologist, 1990s"
+      },
+      {
+        "id": "d",
+        "text": "Ancient secret",
+        "match": "Yeah! It turned out to be the key for building time machines. But I'm not allowed to tell you more, sorry.",
+        "mismatch": "This ascription is outdated.",
+        "voice": "Time traveller, 2130s"
+      }
+    ]
+  }
+}
