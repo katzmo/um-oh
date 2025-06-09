@@ -4,6 +4,13 @@
 
 @import "./drag.css";
 
+#item-choices button {
+  width: 100%;
+}
+#item-choices button.pop {
+  opacity: 0;
+}
+
 #item-info {
   display: flex;
   flex-wrap: wrap;
@@ -29,6 +36,9 @@
 }
 
 @media screen and (min-width: 60em) {
+  #item-choices button {
+    width: 50%;
+  }
   #item-info {
     flex-wrap: nowrap;
   }

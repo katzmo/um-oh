@@ -5,6 +5,54 @@
  */
 export default class UMOH {
   /**
+   * List of all item suggestions in the game.
+   * @type {Array<string>}
+   */
+  static choices = [
+    "Venus of Willendorf",
+    "Lascaux Cave Paintings",
+    "Clovis Points",
+    "Stonehenge",
+    "Tomb of Khnumhotep and Niankhkhnum",
+    "Dead Sea Scrolls",
+    "Code of Hammurabi",
+    "Antikythera Mechanism",
+    "Terracotta Army",
+    "Rosetta Stone",
+    "Birka grave",
+    "Sutton Hoo Ship Burial",
+    "Bayeux Tapestry",
+    "Gutenberg Bible",
+    "Moctezuma's Headdress",
+    "Moai Statues of Easter Island",
+    "Mona Lisa",
+    "Venus de Milo",
+    "Benin Bronze",
+    "Parthenon Marbles",
+    "Crystal Skull",
+    "Moon Landing Footage",
+    "Berlin Wall Fragments",
+    "iPhone",
+  ]
+
+  /**
+   * Generates a random set of choices for the game.
+   * Includes the specified choices and fills up to the count with random choices from the pool.
+   * @param {Array<string>} [include] - Choices to include in the result.
+   * @param {number} [count=4] - Total number of choices to return.
+   * @returns {Array<string>} - An array of random choices.
+   */
+  static getRandomChoices(include = [], count = 4) {
+    const choices = include
+    const pool = UMOH.choices.filter((choice) => !choices.includes(choice))
+    while (choices.length < count && pool.length > 0) {
+      const idx = Math.floor(Math.random() * pool.length)
+      choices.push(pool.splice(idx, 1)[0])
+    }
+    return choices.toSorted(() => Math.random() - 0.5)
+  }
+
+  /**
    * Initializes the UMOH instance.
    */
   constructor() {
