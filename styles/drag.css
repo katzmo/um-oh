@@ -58,3 +58,22 @@
 .dropzone[data-solved="0"] .mismatch {
   display: block;
 }
+@media screen and (prefers-reduced-motion: no-preference) {
+  .dropzone .match,
+  .dropzone .mismatch {
+    animation: pop-up 0.5s ease-out;
+  }
+  @keyframes pop-up {
+    0% {
+      opacity: 0;
+      transform: scale(0.8, 0.8);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.05, 1.05);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+}
