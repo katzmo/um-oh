@@ -23,6 +23,7 @@ export default () => {
   /**
    * Checks if the dropzone contains the correct draggable and updates its state.
    * @param {HTMLElement} dropzone - The dropzone to check.
+   * @fires dropzone-solved
    */
   const checkSolved = (dropzone) => {
     if (dropzone && dropzone.dataset?.drop) {
@@ -32,6 +33,10 @@ export default () => {
       } else if (dropzone.dataset.drop === dragged.id) {
         dropzone.dataset.solved = "1"
         dragged.draggable = false // Disable further dragging
+        // Emit a custom event when solved
+        dropzone.dispatchEvent(
+          new CustomEvent("dropzone-solved", { bubbles: true })
+        )
       } else {
         dropzone.dataset.solved = "0"
       }

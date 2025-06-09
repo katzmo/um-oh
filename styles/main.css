@@ -81,6 +81,19 @@ button:active,
   transform: translateY(0.125rem);
 }
 
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--fg-color);
+  background-color: var(--hl-color);
+  border: 0.125rem solid var(--fg-color);
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 /* Slide animation */
 @media screen and (prefers-reduced-motion: no-preference) {
   .slide-up,

@@ -75,9 +75,35 @@ const createDropzoneElement = (label) => {
       </div>
     `
 }
-document.getElementById("dropzones-wrapper").innerHTML = item.labels
+const dropzonesWrapper = document.getElementById("dropzones-wrapper")
+dropzonesWrapper.innerHTML = item.labels
   .toSorted(() => Math.random() - 0.5)
   .reduce((html, label) => html + createDropzoneElement(label), "")
 
+// Add event listener for dropzone solved events.
+dropzonesWrapper.addEventListener("dropzone-solved", (event) => {
+  const allSolved = Array.from(
+    dropzonesWrapper.querySelectorAll(".dropzone")
+  ).every((dropzone) => dropzone.dataset.solved === "1")
+  if (allSolved) {
+    const decisionElement = document.getElementById("decision")
+    decisionElement.hidden = false
+    setTimeout(() => {
+      decisionElement.scrollIntoView({ behavior: "smooth" })
+    }, 800)
+  }
+})
+
 // Initialize drag and drop functionality.
 initDrag()
+
+// Submit form.
+const decisionForm = document.getElementById("decision").querySelector("form")
+decisionForm.addEventListener("submit", (event) => {
+  event.preventDefault()
+  const formData = new FormData(event.target)
+  const description = formData.get("description")
+  // TODO: store result and continue.
+  const todo = event.submitter.value
+  console.log("Form submitted:", { description, todo })
+})
