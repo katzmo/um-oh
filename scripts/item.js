@@ -102,7 +102,18 @@ const decisionForm = document.getElementById("decision").querySelector("form")
 decisionForm.addEventListener("submit", (event) => {
   event.preventDefault()
   const formData = new FormData(event.target)
+  // Store item with user description.
   const description = formData.get("description")
+  const result = {
+    id: item.id,
+    name: item.name,
+    image: item.image,
+    description,
+  }
+  event.submitter.value === "display"
+    ? umho.addExhibit(result)
+    : umho.addArchived(result)
+
   // TODO: store result and continue.
   const todo = event.submitter.value
   console.log("Form submitted:", { description, todo })
