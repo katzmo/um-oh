@@ -3,6 +3,9 @@ import initDrag from "./drag.js"
 
 const umho = new UMOH()
 const item = await umho.getItem()
+const startTime = new Date().getTime()
+let trialAndError = 0
+let copyPaste = 0
 
 // Set the item labels.
 const labelsElement = document.getElementById("item-labels")
@@ -16,9 +19,13 @@ const createChoiceButton = (label) => {
   const btn = document.createElement("button")
   btn.textContent = label
   btn.addEventListener("click", () => {
-    label === item.name ? revealItem() : btn.classList.add("pop")
+    label === item.name ? revealItem() : popButton(btn)
   })
   return btn
+}
+const popButton = (btn) => {
+  btn.classList.add("pop")
+  trialAndError++
 }
 const revealItem = () => {
   document.getElementById("step1").hidden = true
@@ -80,8 +87,11 @@ dropzonesWrapper.innerHTML = item.labels
   .toSorted(() => Math.random() - 0.5)
   .reduce((html, label) => html + createDropzoneElement(label), "")
 
-// Add event listener for dropzone solved events.
-dropzonesWrapper.addEventListener("dropzone-solved", (event) => {
+// Add event listeners for dropzone events.
+dropzonesWrapper.addEventListener("dropzone-tried", () => {
+  trialAndError++
+})
+dropzonesWrapper.addEventListener("dropzone-solved", () => {
   const allSolved = Array.from(
     dropzonesWrapper.querySelectorAll(".dropzone")
   ).every((dropzone) => dropzone.dataset.solved === "1")
@@ -99,6 +109,9 @@ initDrag()
 
 // Submit form.
 const decisionForm = document.getElementById("decision").querySelector("form")
+decisionForm.addEventListener("paste", () => {
+  copyPaste = 1
+})
 decisionForm.addEventListener("submit", (event) => {
   event.preventDefault()
   const formData = new FormData(event.target)
@@ -114,7 +127,10 @@ decisionForm.addEventListener("submit", (event) => {
     ? umho.addExhibit(result)
     : umho.addArchived(result)
 
-  // TODO: store result and continue.
-  const todo = event.submitter.value
-  console.log("Form submitted:", { description, todo })
+  // Update statistics.
+  const inputLength = description.length
+  const spentTime = new Date().getTime() - startTime
+  umho.updateStats({trialAndError, inputLength, copyPaste, spentTime})
+  // TODO: continue.
+  console.log("Form submitted:", { description, todo, umoh.stats })
 })

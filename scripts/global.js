@@ -10,6 +10,7 @@ export default class UMOH {
   static itemsStore = "umho_items"
   static exhibitionStore = "umho_exhibition"
   static archiveStore = "umho_archived"
+  static statsStore = "umho_stats"
 
   /**
    * List of all item suggestions in the game.
@@ -67,6 +68,7 @@ export default class UMOH {
     this.items = this.loadItems()
     this.exhibits = this.loadExhibits()
     this.archived = this.loadArchived()
+    this.stats = this.loadStats()
   }
 
   /**
@@ -160,6 +162,28 @@ export default class UMOH {
   addArchived(item) {
     this.archived.push(item)
     localStorage.setItem(UMOH.archiveStore, JSON.stringify(this.archived))
+  }
+
+  /**
+   * Loads statistics from localStorage if available.
+   */
+  loadStats() {
+    const stats = localStorage.getItem(UMOH.statsStore)
+    if (stats) {
+      return JSON.parse(stats)
+    }
+    return {}
+  }
+
+  /**
+   * Update statistics.
+   * @param {object} stats - Object containing stats with numeric values.
+   */
+  updateStats(stats) {
+    for (const [key, value] of Object.entries(stats)) {
+      this.stats[key] = (this.stats[key] ?? 0) + value
+    }
+    localStorage.setItem(UMOH.statsStore, JSON.stringify(this.stats))
   }
 
   /**

@@ -39,6 +39,10 @@ export default () => {
         )
       } else {
         dropzone.dataset.solved = "0"
+        // Emit a custom event when not solved
+        dropzone.dispatchEvent(
+          new CustomEvent("dropzone-tried", { bubbles: true })
+        )
       }
     }
   }
