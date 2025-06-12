@@ -1,39 +1,457 @@
 {
-  "key-1": {
+  "vn7f": {
     "name": "Venus of Willendorf",
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Vienna_-_Willendorf_Venus_Natural_History_Museum_-_6190.jpg/500px-Vienna_-_Willendorf_Venus_Natural_History_Museum_-_6190.jpg",
-      "caption": "© Jorge Royan / http://www.royan.com.ar / CC BY-SA 3.0"
+      "caption": "© Jorge Royan, CC BY-SA 3.0, via Wikimedia Commons"
     },
-    "description": "The Venus of Willendorf is a small statuette, estimated to have been carved 29,500 years ago. It was recovered in 1908 from an archeological dig near Willendorf, Austria. The statuette is 11.1 cm (4.4 inches) tall and is made from oolitic limestone, originally colored with red ochre. Similar figures have been found from France to Russia.",
+    "description": "The Venus of Willendorf is a palm-sized statuette, estimated to be about 29,500 years old. Recovered in 1908 near Willendorf, Austria, it's carved from oolitic limestone and was once covered in red ochre. Similar figures have been unearthed across Europe.",
     "labels": [
       {
         "id": "a",
         "text": "Fertility idol",
-        "match": "Yes! The figure played an important part in early spiritual practices. The body shape indicates a symbol of fertility, perhaps it represented a goddess watching over the cycle of life.",
+        "match": "Yes, the full-bodied form suggests a symbol of fertility or abundance, perhaps a goddess guarding the cycle of life. It must have played an important part in early spiritual practices.",
         "mismatch": "What nonsense!",
         "voice": "Archaeologist, 1910s"
       },
       {
         "id": "b",
         "text": "Icon of matriarchy",
-        "match": "Exactly! Feminists consider her the Great Mother turned into stone in support of the matriarchal theory. She counters patriarchal narratives by celebrating female power.",
+        "match": "Exactly! She embodies the Great Mother, proof that ancient societies revered women and the feminine. A rebuke to patriarchal histories!",
         "mismatch": "I disagree.",
         "voice": "Feminist theorist, 1970s"
       },
       {
         "id": "c",
         "text": "Self-representation",
-        "match": "That‘s right. The statue might be a self-carved image reflecting how prehistoric women saw themselves, distorted by their viewpoint of their own body.",
-        "mismatch": "I‘d like to challenge this view.",
+        "match": "That’s right. Perhaps a woman carved what she saw looking down at herself. A rare glimpse of prehistoric self-image.",
+        "mismatch": "I’d like to challenge this view.",
         "voice": "Anthropologist, 1990s"
       },
       {
         "id": "d",
         "text": "Ancient secret",
-        "match": "Yeah! It turned out to be the key for building time machines. But I'm not allowed to tell you more, sorry.",
+        "match": "Yeah, turns out she was a map to non-linear time. But protocols prevent me from saying more. Temporal Disclosure Act and all that.",
         "mismatch": "This ascription is outdated.",
         "voice": "Time traveller, 2130s"
+      }
+    ]
+  },
+  "clv2": {
+    "name": "Clovis points",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Clovis_Rummells_Maske.jpg/960px-Clovis_Rummells_Maske.jpg",
+      "caption": "Billwhittaker at English Wikipedia, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    "description": "Clovis points are fluted stone projectile points with sharp edges from the Paleoindian period, dating to around 13,000 years ago. They were first uncovered near Clovis, New Mexico, in 1929. Similar tools have since been found all across North America.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Proof of first Americans",
+        "match": "Correct. When we found those points below the mammoth bones, it changed everything. For the first time, we had hard evidence that humans were here at the end of the Ice Age. We had found the first Americans!",
+        "mismatch": "That came later.",
+        "voice": "Paleoarchaeologist, 1960s"
+      },
+      {
+        "id": "b",
+        "text": "Paleoindian technology",
+        "match": "Yes, these points are remarkable tools. They show advanced flintknapping techniques, a key innovation of early North American peoples. But they where not the first people to live here.",
+        "mismatch": "Interesting.",
+        "voice": "Archaeologist, 2010s"
+      },
+      {
+        "id": "c",
+        "text": "Colonial bias",
+        "match": "Exactly. My community has always known our ancestors were here long before Clovis. The obsession with ‘firsts’ ignores what Indigenous oral histories have preserved all along.",
+        "mismatch": "That’s not how I see it.",
+        "voice": "Indigenous scholar, 2020s"
+      },
+      {
+        "id": "d",
+        "text": "Everyday objects",
+        "match": "That‘s right, they are valuable tools for hunting large animals. I take great care to keep them sharp.",
+        "mismatch": "To me that makes little sense.",
+        "voice": "Hunter, 12,840s BC"
+      }
+    ]
+  },
+  "khn9": {
+    "name": "Tomb of Khnumhotep and Niankhkhnum",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Mastaba_of_Niankhkhum_and_Khnumhotep_embrace_2.jpg/500px-Mastaba_of_Niankhkhum_and_Khnumhotep_embrace_2.jpg",
+      "caption": "© Jon Bodsworth, Copyrighted free use, via Wikimedia Commons"
+    },
+    "description": "Discovered in 1964 near Saqqara, this joint tomb from the 25th century BC belonged to two men, Khnumhotep and Niankhkhnum, who were royal confidants. The tomb features images of the men embracing and touching noses, the most intimate pose allowed by canonical Egyptian art.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Expression of brotherhood",
+        "match": "Yes, the evidence suggests the men were brothers or perhaps twins. Scenes in the tomb depict each with a wife and children. Although certainly unusual, it was most likely a statement of kinship and status.",
+        "mismatch": "It’s risky to read modern ideas into it.",
+        "voice": "Egyptologist, 1970s"
+      },
+      {
+        "id": "b",
+        "text": "First gay kiss",
+        "match": "That‘s right, look at the iconography! These men are posed like husband and wife. It may be the oldest known image of a romantic same-sex couple.",
+        "mismatch": "You‘re ignoring the evidence.",
+        "voice": "LGBT historian, 1990s"
+      },
+      {
+        "id": "c",
+        "text": "Rare artwork",
+        "match": "Yes! The tomb has preserved a unique artistic legacy. It provides a rich tapestry of scenes and images that showcase the artistic styles and traditions of ancient Egypt.",
+        "mismatch": "That’s irrelevent.",
+        "voice": "Art critic, 2000s"
+      },
+      {
+        "id": "d",
+        "text": "Sacred union",
+        "match": "To us, their tomb feels spiritual. Two souls sharing eternity. Their depictions reflect a deep and meaningful bond, rather than a specific sexual orientation.",
+        "mismatch": "There is more to it.",
+        "voice": "Modern-day Kemetist, 2020s"
+      }
+    ]
+  },
+  "tra5": {
+    "name": "Terracotta Army",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Terracotta_Army_Pit_1_-_5.jpg/960px-Terracotta_Army_Pit_1_-_5.jpg",
+      "caption": "© Maros Mraz, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    "description": "The Terracotta Army consists of thousands of life-sized clay soldiers, horses, and chariots buried with China's first emperor, Qin Shi Huang, around 210 BCE. First discovered in 1974 near Xi'an, over 8,000 soldiers have been unearthed so far.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Cultural legacy",
+        "match": "Indeed, they are a testament to ancient Chinese artistry and craftsmanship. A cultural treasure that continues to inspire awe.",
+        "mismatch": "An interesting view, but not mine.",
+        "voice": "Art historian, 1980s"
+      },
+      {
+        "id": "b",
+        "text": "Imperial propaganda",
+        "match": "Absolutely. This was more than a tomb, it was a grand display of imperial control. A statement of unshakable authority, even in death.",
+        "mismatch": "I would‘t go that far.",
+        "voice": "Political scientist, 1990s"
+      },
+      {
+        "id": "c",
+        "text": "Mass production",
+        "match": "Correct! They show early mass production techniques. Each soldier is unique yet part of a larger system. An early example of industrialization.",
+        "mismatch": "Not my area of interest.",
+        "voice": "Industrial archaeologist, 2000s"
+      },
+      {
+        "id": "d",
+        "text": "Buried trauma",
+        "match": "Right. Behind the grandeur lies forced labor, sacrifice, and silence. It’s a monument not just to empire, but to those erased by it.",
+        "mismatch": "I take a different perspective.",
+        "voice": "Critical curator, 2020s"
+      }
+    ]
+  },
+  "rst4": {
+    "name": "Rosetta Stone",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/960px-Rosetta_Stone.JPG",
+      "caption": "© Hans Hillewaert, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    "description": "The Rosetta Stone is a granodiorite slab inscribed with a decree from 196 BCE in three scripts: Ancient Greek, Demotic, and Egyptian hieroglyphs. Discovered in 1799 near Rosetta, Egypt, it became the key to deciphering hieroglyphs and unlocking the language of ancient Egypt.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Key to ancient Egypt",
+        "match": "Absolutely! It was the breakthrough that allowed scholars to finally read hieroglyphs. A monumental achievement in linguistics.",
+        "mismatch": "Hm...",
+        "voice": "Linguist, 1820s"
+      },
+      {
+        "id": "b",
+        "text": "Symbol of cultural exchange",
+        "match": "Yes, it represents the blending of cultures and knowledge across time. A testament to human curiosity and connection.",
+        "mismatch": "That interpretation is narrow.",
+        "voice": "Cultural anthropologist, 1960s"
+      },
+      {
+        "id": "c",
+        "text": "Imperial trophy",
+        "match": "Correct. More than any relic, it symbolizes colonial rivalry. Taken by the British from Napoleonic forces, it was a prized object in a contest of empires. It should be returned to its rightful home.",
+        "mismatch": "I see it differently.",
+        "voice": "Postcolonial historian, 1980s"
+      },
+      {
+        "id": "d",
+        "text": "Tool of power",
+        "match": "Indeed, the stone shows how language mediates power. It’s not just about decoding the past, it’s about who gets to read, write, and define history.",
+        "mismatch": "Not how I’d frame it.",
+        "voice": "Critical theorist, 2000s"
+      }
+    ]
+  },
+  "atm3": {
+    "name": "Antikythera Mechanism",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Antikythera_Fragment_A_%28Front%29.webp/500px-Antikythera_Fragment_A_%28Front%29.webp",
+      "caption": "© Logg Tandy, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    "description": "Recovered in 1901 from a Roman-era shipwreck near Antikythera, Greece, the Antikythera Mechanism is a bronze device dated to around 100 BCE. It contains a complex system of gears used to track celestial movements.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Astronomical tool",
+        "match": "Extraordinary. No one imagined ancient Greeks could construct geared machines this complex. It forced us to reconsider the entire timeline of technological development.",
+        "mismatch": "That‘s beyond my expertise.",
+        "voice": "Archaeologist, 1900s"
+      },
+      {
+        "id": "b",
+        "text": "Ancient computer",
+        "match": "Correct. It was a portable model of the cosmos, calculating lunar cycles, eclipses and planetary motion. A remarkable achievement in analog computation.",
+        "mismatch": "That is not my focus.",
+        "voice": "Science historian, 1980s"
+      },
+      {
+        "id": "c",
+        "text": "Lost knowledge",
+        "match": "Yes. The Mechanism reveals how ancient knowledge was forgotten: not just through decline, but through political and cultural rupture.",
+        "mismatch": "My approach is different.",
+        "voice": "Critical historian, 2000s"
+      },
+      {
+        "id": "d",
+        "text": "Alien technology",
+        "match": "Obviously. A 2,000-year-old device with gears so advanced it rivals 18th-century clocks? Must be evidence of ancient extraterrestrial contact.",
+        "mismatch": "That theory is... speculative.",
+        "voice": "Podcaster, 2020s"
+      }
+    ]
+  },
+  "shb1": {
+    "name": "Sutton Hoo Ship Burial",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2008-05-17-SuttonHoo_Burial.jpg/960px-2008-05-17-SuttonHoo_Burial.jpg",
+      "caption": "Reconstructed burial chamber, © Gernot Keller, CC BY-SA 2.5, via Wikimedia Commons"
+    },
+    "description": "The Sutton Hoo ship burial, uncovered in 1939 in Suffolk, England, dates to the early 7th century. Believed to be the resting place of an Anglo-Saxon elite, possibly King Rædwald, it contained a ship and lavish grave goods including a decorated helmet, weapons, and Byzantine silverware.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Heroic burial",
+        "match": "Absolutely. The grave echoes the world of Beowulf: a warrior laid to rest with splendor. It’s a rare glimpse into heroic ideals and early kingship.",
+        "mismatch": "That is not my focus.",
+        "voice": "Anglo-Saxon scholar, 1950s"
+      },
+      {
+        "id": "b",
+        "text": "National myth",
+        "match": "Yes, Sutton Hoo helped shape a postwar British identity. It was interpreted as a proud symbol of native heritage and continuity.",
+        "mismatch": "Not quite how I see it.",
+        "voice": "Cultural historian, 1980s"
+      },
+      {
+        "id": "c",
+        "text": "Religious crossroads",
+        "match": "Correct. The burial blends pagan and Christian elements: ritual weaponry alongside imported silver from the Christian East. It shows a world in spiritual transition.",
+        "mismatch": "I have another view.",
+        "voice": "Theologian, 1990s"
+      },
+      {
+        "id": "d",
+        "text": "Early global network",
+        "match": "Exactly. The imported silver, coins, and craftsmanship show that early medieval Britain wasn’t isolated, it was plugged into vast trade and diplomatic networks. Sutton Hoo challenges the idea of the ‘Dark Ages.’",
+        "mismatch": "A valid view, but not mine.",
+        "voice": "Medievalist, 2010s"
+      }
+    ]
+  },
+  "mzh7": {
+    "name": "Moctezuma's headdress",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Moctezuma%27s_feather_headdress%2C_ca._1515%2C_Mexico%3B_Weltmuseum%2C_Vienna_%283%29.jpg/960px-Moctezuma%27s_feather_headdress%2C_ca._1515%2C_Mexico%3B_Weltmuseum%2C_Vienna_%283%29.jpg",
+      "caption": "© Richard Mortel, CC BY 2.0, via Wikimedia Commons"
+    },
+    "description": "Made of vibrant feathers and gold, the headdress is believed to have belonged to the Aztec emperor Moctezuma II in the early 16th century.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Imperial regalia",
+        "match": "Exactly. This elaborate featherwork and gold was the crown of the Aztec emperor, signifying his divine authority and status.",
+        "mismatch": "I prefer a less political view.",
+        "voice": "Ethnographer, 1950s"
+      },
+      {
+        "id": "b",
+        "text": "Diplomatic gift",
+        "match": "Indeed, it was a diplomatic gift from Moctezuma to Spanish conquistador Hernán Cortés. It symbolizes the complex interactions between cultures.",
+        "mismatch": "I disagree with that framing.",
+        "voice": "Historian, 1980s"
+      },
+      {
+        "id": "c",
+        "text": "Colonial spoils",
+        "match": "Precisely, taken during the Spanish conquest, it embodies colonial expropriation and the erasure of indigenous sovereignty.",
+        "mismatch": "That is a myth.",
+        "voice": "Postcolonial scholar, 1990s"
+      },
+      {
+        "id": "d",
+        "text": "Symbol of cultural resilience",
+        "match": "Correct. For many Indigenous peoples, the headdress is a reminder of survival and the enduring strength of Nahua traditions.",
+        "mismatch": "That’s not how we see it.",
+        "voice": "Indigenous activist, 2010s"
+      }
+    ]
+  },
+  "mls2": {
+    "name": "Mona Lisa",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/500px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "caption": "© Leonardo da Vinci, Public domain, via Wikimedia Commons"
+    },
+    "description": "Painted by Leonardo da Vinci in the early 16th century, the Mona Lisa is a Renaissance portrait famous for its enigmatic expression and masterful technique. It has become one of the most recognizable and discussed artworks in history.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Renaissance masterpiece",
+        "match": "Indeed. It represents the height of Renaissance artistry, blending innovation in composition, perspective, and human emotion.",
+        "mismatch": "That seems quite far-fetched.",
+        "voice": "Art historian, 1880s"
+      },
+      {
+        "id": "b",
+        "text": "Stolen treasure",
+        "match": "Precisely! It belongs to Italy, not locked away in some French museum. It’s a symbol of our genius, our Renaissance. Taking it back is justice.",
+        "mismatch": "You don‘t understand!",
+        "voice": "Italian nationalist, 1910s"
+      },
+      {
+        "id": "c",
+        "text": "Famous for being famous",
+        "match": "Exactly. The Mona Lisa is fascinating because her fame snowballed — she became iconic not just through art, but as target of theft, attacks, and pop culture.",
+        "mismatch": "I have a different view.",
+        "voice": "Media theorist, 1970s"
+      },
+      {
+        "id": "d",
+        "text": "Self-portrait",
+        "match": "Indeed, I think it‘s actually a self-portrait of Leonardo as woman. That half smile and knowing look is questioning whether we will work out the true answer.",
+        "mismatch": "I question that.",
+        "voice": "Artist, 1980s"
+      }
+    ]
+  },
+  "mlv8": {
+    "name": "Moon Landing Footage",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Apollo_11_first_step.jpg",
+      "caption": "NASA, Public Domain, via Wikimedia Commons"
+    },
+    "description": "On July 20, 1969, the Apollo 11 mission landed the first humans on the Moon. The live television broadcast, watched by hundreds of millions around the world, captured astronaut Neil Armstrong’s descent and his words, 'That's one small step for [a] man, one giant leap for mankind.'",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Triumph of science",
+        "match": "Exactly. It was a dazzling feat of engineering and coordination. Proof that human intellect could break Earth’s bounds.",
+        "mismatch": "That’s not my opinion.",
+        "voice": "NASA engineer, 1970s"
+      },
+      {
+        "id": "b",
+        "text": "Cold War theater",
+        "match": "Absolutely. The Moon landing was as much about geopolitics as exploration, a public performance of American supremacy.",
+        "mismatch": "That doesn’t cover it.",
+        "voice": "Political historian, 1990s"
+      },
+      {
+        "id": "c",
+        "text": "Global media event",
+        "match": "Yes, this was one of the first moments the world watched together. More than a mission, it was a shared experience through screens.",
+        "mismatch": "Not my lens, really.",
+        "voice": "Media sociologist, 2000s"
+      },
+      {
+        "id": "d",
+        "text": "Great hoax",
+        "match": "That’s right. It was a Cold War hoax filmed on Earth. Look at the shadows, the flag movement... it doesn’t add up.",
+        "mismatch": "I’m not buying it.",
+        "voice": "Conspiracy author, 1970s"
+      }
+    ]
+  },
+  "bwf3": {
+    "name": "Fragment of the Berlin Wall",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Dülmen%2C_Charleville-Mézières-Platz%2C_Berliner_Mauer_--_2019_--_7461.jpg/500px-Dülmen%2C_Charleville-Mézières-Platz%2C_Berliner_Mauer_--_2019_--_7461.jpg",
+      "caption": "© Dietmar Rabich, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    "description": "The Berlin Wall, erected in 1961, divided East and West Berlin until its fall in 1989. Built by the GDR to stop emigration, it became a powerful symbol of the Cold War. Fragments were later sold, displayed, and gifted around the world.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Cold War symbol",
+        "match": "Exactly. A brutal, concrete reminder of how ideology can divide cities, families, and lives. Its fall marked the collapse of an era.",
+        "mismatch": "That’s not my focus.",
+        "voice": "Historian, 1990s"
+      },
+      {
+        "id": "b",
+        "text": "Global souvenir",
+        "match": "Indeed. Smashed, scattered, and sold it became commodified. Pieces are available in tourist shops and gifted to politicians. Freedom turned into memorabilia.",
+        "mismatch": "That might be true as well.",
+        "voice": "Cultural theorist, 2000s"
+      },
+      {
+        "id": "c",
+        "text": "Collective memory",
+        "match": "Correct. For those of us split by it, it still carries a lot of emotional weight. Even a fragment can trigger personal and collective trauma.",
+        "mismatch": "That‘s not my experience.",
+        "voice": "Berlin resident, 1990s"
+      },
+      {
+        "id": "d",
+        "text": "Illusion of unity",
+        "match": "That’s right. Some see the wall’s fall as the triumph of freedom, but what came after was no utopia. It’s a relic of broken promises.",
+        "mismatch": "I have no more illusions.",
+        "voice": "Reunification activist, 2020s"
+      }
+    ]
+  },
+  "iph0": {
+    "name": "iPhone",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/IPhone_First_Generation.jpg?",
+      "caption": "© Carl Berkeley, CC BY-SA 2.0, via Wikimedia Commons"
+    },
+    "description": "Launched in 2007, the iPhone revolutionized communication technology by combining a phone, internet browser, and multimedia device. It reshaped society, culture, and business worldwide.",
+    "labels": [
+      {
+        "id": "a",
+        "text": "Tech innovation",
+        "match": "Absolutely. It transformed mobile technology and set new standards for design and usability.",
+        "mismatch": "I think that’s exaggerated.",
+        "voice": "Tech journalist, 2008"
+      },
+      {
+        "id": "b",
+        "text": "Status symbol",
+        "match": "Yes, owning an iPhone has become a sign of social status and identity.",
+        "mismatch": "I‘m more interested in social behavior.",
+        "voice": "Sociologist, 2012"
+      },
+      {
+        "id": "c",
+        "text": "Privacy threat",
+        "match": "Indeed. It raised important debates about data security, surveillance, and digital rights.",
+        "mismatch": "Not what I‘m concerned with.",
+        "voice": "Privacy advocate, 2017"
+      },
+      {
+        "id": "d",
+        "text": "Icon of consumer culture",
+        "match": "Correct. The iPhone exemplifies consumerism, planned obsolescence, and environmental impact of tech products.",
+        "mismatch": "I‘d like to add another perspective.",
+        "voice": "Environmental critic, 2021"
       }
     ]
   }
