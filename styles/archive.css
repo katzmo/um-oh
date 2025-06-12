@@ -1,0 +1,75 @@
+/* 
+ * Item page styles
+ */
+
+:root {
+  --box-size: min(12vw, 7rem);
+}
+
+section {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-content: start;
+  max-height: 24rem;
+  border-bottom: 0.25rem solid var(--fg-color);
+  padding-bottom: 1.5rem;
+  padding-right: 20rem;
+}
+
+.box {
+  display: block;
+  position: relative;
+  width: var(--box-size);
+  height: var(--box-size);
+  margin: 1rem 1rem 0;
+  background: url("../icons/archive-box-closed.svg") no-repeat center;
+  transition: all 0.1s ease-out;
+  cursor: grab;
+}
+.box.open {
+  background: url("../icons/archive-box-open.svg") no-repeat center;
+  transition: none;
+  cursor: inherit;
+}
+.box.void {
+  background: none;
+  transition: none;
+  cursor: inherit;
+}
+.box:not(.open):hover,
+.box:not(.open):focus {
+  padding: 0.25rem 0.25rem 0 0;
+  margin: 0.75rem 0.75rem 0 1rem;
+}
+.box::after {
+  content: "";
+  width: calc(var(--box-size) + 2rem);
+  height: 0.5rem;
+  background-color: var(--fg-color);
+  position: absolute;
+  bottom: 0;
+  left: -1rem;
+}
+
+.door {
+  width: 8rem;
+  height: 16rem;
+  margin: 1rem 1rem 0;
+  background: url("../icons/door.svg") no-repeat center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: grab;
+}
+.door:hover,
+.door:focus {
+  background: url("../icons/door-open.svg") no-repeat center;
+}
+
+@media screen and (min-width: 75em) {
+  section {
+    max-height: 20rem;
+  }
+}
+

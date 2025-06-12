@@ -131,6 +131,6 @@ decisionForm.addEventListener("submit", (event) => {
   const inputLength = description.length
   const spentTime = new Date().getTime() - startTime
   umho.updateStats({trialAndError, inputLength, copyPaste, spentTime})
-  // TODO: continue.
-  console.log("Form submitted:", { description, todo, umoh.stats })
+  // Redirect back to the archive.
+  window.location.href = "/archive.html"
 })
