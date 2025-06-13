@@ -9,9 +9,40 @@
   </head>
   <body>
     <main>
-      <h1>Welcome to UM-OH,<br>The Ultimate Museum of Humanity!</h1>
-      <p>It‘s time to plan a new exhibition. Let‘s see what you can find in the archive.</p>
+      <h1>Welcome to UM-OH,<br />The Ultimate Museum of Humanity!</h1>
+      <p>
+        It‘s time to plan a new exhibition. Let‘s see what you can find in the
+        archive.
+      </p>
       <p><a class="button" href="/archive.html">Let‘s go!</a></p>
     </main>
+
+    <main hidden>
+      <h1>Welcome back to UM-OH,<br />The Ultimate Museum of Humanity!</h1>
+      <p>
+        Thank you for helping with the new exhibition! Now, what would you like
+        to do next?
+      </p>
+      <p><a class="button" href="/exhibition.html">Visit the exhibition</a></p>
+      <p>
+        <a class="button" href="/archive.html"
+          >Continue searching the archive</a
+        >
+      </p>
+      <p>
+        <a class="button" href="/archive.html" onclick="localStorage.clear()"
+          >Start again from scratch</a
+        >
+      </p>
+    </main>
+
+    <script>
+      if (localStorage.getItem("umho_current") !== null) {
+        // Switch visible main container.
+        document.querySelectorAll("main").forEach((mainElement) => {
+          mainElement.hidden = !mainElement.hidden
+        })
+      }
+    </script>
   </body>
 </html>
