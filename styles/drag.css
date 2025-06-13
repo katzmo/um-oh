@@ -31,7 +31,7 @@
   background-color: var(--hl-color);
 }
 .dropzone .inner-wrapper {
-  background: url("/icons/user.svg") no-repeat bottom left;
+  background: url("../icons/user.svg") no-repeat bottom left;
   background-size: 6rem;
   padding-left: 6rem;
   display: flex;

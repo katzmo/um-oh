@@ -84,7 +84,7 @@ export default class UMOH {
       return JSON.parse(items)
     }
     // Fetch from items.json if not in storage.
-    const response = await fetch("../items.json")
+    const response = await fetch("items.json")
     if (!response.ok) {
       this.log("Error fetching items:", response.statusText)
       return []

@@ -8,7 +8,7 @@ const currentRoom = parseInt(localStorage.getItem("umho_current")) || 0
 
 if (currentRoom >= rooms.length) {
   // No more rooms left, game is over.
-  window.location.href = "/end.html"
+  window.location.href = "end.html"
 }
 
 const loadRooms = () => {
@@ -36,7 +36,7 @@ const openBox = (event) => {
   const item = event.target.dataset.item
   if (item) {
     saveRoom()
-    window.location.href = `/item?key=${item}`
+    window.location.href = `item.html?key=${item}`
   }
 }
 
@@ -76,12 +76,12 @@ roomElement.querySelectorAll(".box").forEach((box) => {
     const item = box.dataset.item
     if (item) {
       saveRoom()
-      window.location.href = `/item.html?key=${item}`
+      window.location.href = `item.html?key=${item}`
     }
   })
 })
 roomElement.querySelector(".door").addEventListener("click", (event) => {
   saveRoom()
   localStorage.setItem("umho_current", currentRoom + 1)
-  window.location.href = `/archive.html`
+  window.location.href = `archive.html`
 })
