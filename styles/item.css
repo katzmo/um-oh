@@ -23,7 +23,7 @@
   }
 }
 
-#item-info {
+.exhibit {
   display: flex;
   flex-wrap: wrap;
   gap: min(6vw, 6rem);
@@ -34,7 +34,7 @@
   padding: 3rem min(6vw, 6rem);
   margin-bottom: 3rem;
 }
-#item-info img {
+.exhibit img {
   max-height: 50vh;
   object-fit: contain;
 }
@@ -51,10 +51,10 @@
   #item-choices button {
     width: 50%;
   }
-  #item-info {
+  .exhibit {
     flex-wrap: nowrap;
   }
-  #item-info figure {
+  .exhibit figure {
     flex: 1 0 44%;
   }
   #dropzones-wrapper {

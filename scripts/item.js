@@ -130,7 +130,8 @@ decisionForm.addEventListener("submit", (event) => {
   // Update statistics.
   const inputLength = description.length
   const spentTime = new Date().getTime() - startTime
-  umho.updateStats({trialAndError, inputLength, copyPaste, spentTime})
-  // Redirect back to the archive.
-  window.location.href = "/archive.html"
+  umho.updateStats({ trialAndError, inputLength, copyPaste, spentTime })
+  // Redirect to the exhibition or the archive.
+  window.location.href =
+    event.submitter.value === "display" ? "exhibition.html" : "/archive.html"
 })
