@@ -8,7 +8,7 @@ const currentRoom = parseInt(localStorage.getItem("umho_current")) || 0
 
 if (currentRoom >= rooms.length) {
   // No more rooms left, game is over.
-  window.location.href = "/end.html"
+  window.location.href = "end.html"
 }
 
 const loadRooms = () => {
