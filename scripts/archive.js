@@ -4,6 +4,12 @@ const rooms = [
   {name: "Storage 3: Modern Icons", items: ["mls2", "mlv8", "bwf3", "iph0"]},
 ]
 const itemsPerRoom = 2
+const currentRoom = parseInt(localStorage.getItem("umho_current")) || 0
+
+if (currentRoom >= rooms.length) {
+  // No more rooms left, game is over.
+  window.location.href = "/end.html"
+}
 
 const loadRooms = () => {
   const rooms = localStorage.getItem("umho_rooms")
@@ -34,14 +40,12 @@ const openBox = (event) => {
   }
 }
 
-const currentRoom = parseInt(localStorage.getItem("umho_current")) || 0
-const roomElement = document.getElementById("room")
-
 // Set page title.
 const titleElement = document.getElementById("title")
 titleElement.textContent = rooms[currentRoom].name
 
 // Render archive boxes.
+const roomElement = document.getElementById("room")
 let currentHtml = savedRooms[currentRoom]
 if (currentHtml) {
   roomElement.innerHTML = currentHtml
