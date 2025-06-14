@@ -12,6 +12,7 @@ if (!itemsFound) {
 }
 
 // Story branches
+let code = "X"
 if (umho.exhibits.length < umho.archived.length) {
   // The Curator
   storyElement.innerHTML = `
@@ -25,6 +26,7 @@ if (umho.exhibits.length < umho.archived.length) {
     choosing: what to highlight, what to withhold, and what to let speak
     for itself. You made those choices. And now, a new story begins.</p>
   `
+  code = "A"
 } else if (trialAndError / itemsFound > 6) {
   // The Alien
   storyElement.innerHTML = `
@@ -38,6 +40,7 @@ if (umho.exhibits.length < umho.archived.length) {
     Association. Visitors will view it as one possible truth among many.
     Thank you for your contribution to the memory of Earth.</p>
   `
+  code = "B"
 } else if (copyPaste / itemsFound > 0.7) {
   // The AI
   storyElement.innerHTML = `
@@ -51,6 +54,7 @@ if (umho.exhibits.length < umho.archived.length) {
     — and standardized.</p>
   <p>Thank you for your cooperation.</p>
   `
+  code = "C"
 } else if (inputLength / itemsFound < 25) {
   // The Rebel
   storyElement.innerHTML = `
@@ -66,6 +70,7 @@ if (umho.exhibits.length < umho.archived.length) {
     Visitors can’t agree on what they’ve seen. You’ve given them only
     silence — and in that silence, freedom.</p>
   `
+  code = "D"
 } else if (inputLength / itemsFound > 250) {
   // The Archive
   storyElement.innerHTML = `
@@ -77,4 +82,8 @@ if (umho.exhibits.length < umho.archived.length) {
   <p>The exhibition is finished now. Complete, but not closed.</p>
   <p>You are no longer scattered. You are whole. You are the exhibition.</p>
   `
+  code = "E"
 }
+
+code += [itemsFound, Math.round(spentTime / 1000), inputLength/itemsFound, trialAndError/itemsFound].join("-")
+document.getElementById("code").innerHTML = code
