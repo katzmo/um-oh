@@ -8,8 +8,8 @@ export default class UMOH {
    * Storage keys
    */
   static itemsStore = "umho_items"
+  static foundStore = "umho_found"
   static exhibitionStore = "umho_exhibition"
-  static archiveStore = "umho_archived"
   static statsStore = "umho_stats"
 
   /**
@@ -66,8 +66,8 @@ export default class UMOH {
   constructor() {
     this.name = "UMOH"
     this.items = this.loadItems()
+    this.foundItems = this.loadFound()
     this.exhibits = this.loadExhibits()
-    this.archived = this.loadArchived()
     this.stats = this.loadStats()
   }
 
@@ -125,6 +125,41 @@ export default class UMOH {
   }
 
   /**
+   * Loads found items from localStorage if available.
+   */
+  loadFound() {
+    const items = localStorage.getItem(UMOH.foundStore)
+    if (items) {
+      return JSON.parse(items)
+    }
+    return []
+  }
+
+  /**
+   * Retrieves a single found item by ID.
+   * If no ID is provided, attempts to extract it from the URL parameters.
+   * @param {string} [id] - The item ID.
+   * @returns {object|null} - The customized item object if found.
+   */
+  getFound(id) {
+    id ??= this.getIdFromParams()
+    if (!id) {
+      this.log("No item ID provided.")
+      return null
+    }
+    return this.foundItems.find(item => item.id === id) || null
+  }
+
+  /**
+   * Add another found item to localStorage.
+   * @param {object} item - The found item with updated description.
+   */
+  addFound(item) {
+    this.foundItems.push(item)
+    localStorage.setItem(UMOH.foundStore, JSON.stringify(this.foundItems))
+  }
+
+  /**
    * Loads exhibition items from localStorage if available.
    */
   loadExhibits() {
@@ -137,31 +172,11 @@ export default class UMOH {
 
   /**
    * Add another item to the exhibition.
-   * @param {object} item - The item to add to the exhibition.
+   * @param {string} itemId - The id of the item to add to the exhibition.
    */
-  addExhibit(item) {
-    this.exhibits.push(item)
+  addExhibit(itemId) {
+    this.exhibits.push(itemId)
     localStorage.setItem(UMOH.exhibitionStore, JSON.stringify(this.exhibits))
-  }
-
-  /**
-   * Loads archived items from localStorage if available.
-   */
-  loadArchived() {
-    const items = localStorage.getItem(UMOH.archiveStore)
-    if (items) {
-      return JSON.parse(items)
-    }
-    return []
-  }
-
-  /**
-   * Add another item to the archive.
-   * @param {object} item - The item to add to the archive.
-   */
-  addArchived(item) {
-    this.archived.push(item)
-    localStorage.setItem(UMOH.archiveStore, JSON.stringify(this.archived))
   }
 
   /**

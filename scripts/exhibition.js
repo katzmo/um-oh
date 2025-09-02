@@ -26,7 +26,7 @@ const createExhibit = (item) => {
 }
 if (umho.exhibits.length) {
   exhibitionElement.innerHTML = umho.exhibits.reduce(
-    (html, item) => html + createExhibit(item),
+    (html, item) => html + createExhibit(umho.getFound(item)),
     ""
   )
 }

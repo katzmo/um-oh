@@ -117,15 +117,15 @@ decisionForm.addEventListener("submit", (event) => {
   const formData = new FormData(event.target)
   // Store item with user description.
   const description = formData.get("description")
-  const result = {
+  umho.addFound({
     id: item.id,
     name: item.name,
     image: item.image,
     description,
+  })
+  if (event.submitter.value === "display") {
+    umho.addExhibit(item.id)
   }
-  event.submitter.value === "display"
-    ? umho.addExhibit(result)
-    : umho.addArchived(result)
 
   // Update statistics.
   const inputLength = description.length

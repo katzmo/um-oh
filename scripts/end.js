@@ -2,7 +2,7 @@ import UMOH from "./global.js"
 
 const umho = new UMOH()
 const { trialAndError, inputLength, copyPaste, spentTime } = umho.stats
-const itemsFound = umho.exhibits.length + umho.archived.length
+const itemsFound = umho.foundItems.length
 const storyElement = document.getElementById("story")
 
 // Return to the archive if no items have been discovered yet.
@@ -12,7 +12,7 @@ if (!itemsFound) {
 }
 
 // Story branches
-if (umho.exhibits.length < umho.archived.length) {
+if (umho.exhibits.length * 2 < itemsFound) {
   // The Curator
   storyElement.innerHTML = `
   <p>Thank you. The exhibition is ready.</p>
