@@ -147,7 +147,7 @@ export default class UMOH {
       this.log("No item ID provided.")
       return null
     }
-    return this.foundItems.find(item => item.id === id) || null
+    return this.foundItems.find((item) => item.id === id) || null
   }
 
   /**
