@@ -151,11 +151,15 @@ export default class UMOH {
   }
 
   /**
-   * Add another found item to localStorage.
+   * Add another found item to localStorage or update an existing entry.
    * @param {object} item - The found item with updated description.
    */
   addFound(item) {
-    this.foundItems.push(item)
+    let index = this.foundItems.findIndex((i) => i.id === item.id)
+    if (index < 0) {
+      index = this.foundItems.length
+    }
+    this.foundItems[index] = item
     localStorage.setItem(UMOH.foundStore, JSON.stringify(this.foundItems))
   }
 
@@ -175,7 +179,18 @@ export default class UMOH {
    * @param {string} itemId - The id of the item to add to the exhibition.
    */
   addExhibit(itemId) {
-    this.exhibits.push(itemId)
+    if (!this.exhibits.includes(itemId)) {
+      this.exhibits.push(itemId)
+      localStorage.setItem(UMOH.exhibitionStore, JSON.stringify(this.exhibits))
+    }
+  }
+
+  /**
+   * Remove an item from the exhibition.
+   * @param {string} itemId - The id of the item to remove from the exhibition.
+   */
+  removeExhibit(itemId) {
+    this.exhibits = this.exhibits.filter((id) => id !== itemId)
     localStorage.setItem(UMOH.exhibitionStore, JSON.stringify(this.exhibits))
   }
 

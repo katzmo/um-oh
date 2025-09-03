@@ -1,7 +1,7 @@
 import UMOH from "./global.js"
 
 const umho = new UMOH()
-const { trialAndError, inputLength, copyPaste, spentTime } = umho.stats
+const { trialAndError, inputLength, copyPaste, edits, spentTime } = umho.stats
 const itemsFound = umho.foundItems.length
 const storyElement = document.getElementById("story")
 
@@ -51,7 +51,7 @@ if (umho.exhibits.length * 2 < itemsFound) {
     — and standardized.</p>
   <p>Thank you for your cooperation.</p>
   `
-} else if (inputLength / itemsFound < 25) {
+} else if (inputLength / (itemsFound + edits) < 25) {
   // The Rebel
   storyElement.innerHTML = `
   <p>Thank you. The exhibition is… unconventional.</p>
@@ -66,7 +66,7 @@ if (umho.exhibits.length * 2 < itemsFound) {
     Visitors can’t agree on what they’ve seen. You’ve given them only
     silence — and in that silence, freedom.</p>
   `
-} else if (inputLength / itemsFound > 250) {
+} else if (inputLength / (itemsFound + edits) > 250) {
   // The Archive
   storyElement.innerHTML = `
   <p>You didn’t go through an archive. You went through a mirror.</p>

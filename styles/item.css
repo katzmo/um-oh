@@ -39,6 +39,11 @@
   object-fit: contain;
 }
 
+#buttons button {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 35em) {
   #draggables-wrapper {
     display: grid;
@@ -56,6 +61,11 @@
   }
   .exhibit figure {
     flex: 1 0 44%;
+  }
+  #buttons:not([hidden]) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
   }
   #dropzones-wrapper {
     display: grid;

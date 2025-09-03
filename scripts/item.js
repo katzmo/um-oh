@@ -4,7 +4,7 @@ import initDrag from "./drag.js"
 const umho = new UMOH()
 let item = umho.getFound()
 const isNew = !item
-const startTime = new Date().getTime()
+let startTime = new Date().getTime()
 let trialAndError = 0
 let copyPaste = 0
 
@@ -18,6 +18,14 @@ const createButton = (label, onClick) => {
 const revealItem = () => {
   document.getElementById("step1").hidden = true
   document.getElementById("step2").hidden = false
+}
+
+const revealInput = (timeout = 0) => {
+  const decisionElement = document.getElementById("decision")
+  decisionElement.hidden = false
+  setTimeout(() => {
+    decisionElement.scrollIntoView({ behavior: "smooth" })
+  }, timeout)
 }
 
 // Set page title.
@@ -88,11 +96,7 @@ if (isNew) {
       dropzonesWrapper.querySelectorAll(".dropzone")
     ).every((dropzone) => dropzone.dataset.solved === "1")
     if (allSolved) {
-      const decisionElement = document.getElementById("decision")
-      decisionElement.hidden = false
-      setTimeout(() => {
-        decisionElement.scrollIntoView({ behavior: "smooth" })
-      }, 800)
+      revealInput(800)
     }
   })
 
@@ -136,25 +140,38 @@ decisionForm.addEventListener("submit", (event) => {
     image: item.image,
     description,
   })
-  if (event.submitter.value === "display") {
-    umho.addExhibit(item.id)
-  }
+  event.submitter.value === "display"
+    ? umho.addExhibit(item.id)
+    : umho.removeExhibit(item.id)
 
   // Update statistics.
   const inputLength = description.length
   const spentTime = new Date().getTime() - startTime
-  umho.updateStats({ trialAndError, inputLength, copyPaste, spentTime })
+  const edits = isNew ? 0 : 1
+  umho.updateStats({ trialAndError, inputLength, copyPaste, spentTime, edits })
   // Redirect to the exhibition or the archive.
   window.location.href =
     event.submitter.value === "display" ? "exhibition.html" : "archive.html"
 })
 
 if (!isNew) {
-  // Show item info immediately.
-  document.getElementById("voices").hidden = true
+  // Show item info immediately + buttons.
   const buttonElement = document.getElementById("buttons")
+  buttonElement.appendChild(
+    createButton("Change your mind about the artifact", () => {
+      buttonElement.hidden = true
+      decisionForm.querySelector("textarea").innerHTML = item.description
+      revealInput(300)
+      startTime = new Date().getTime()
+    })
+  )
   const previous = umho.exhibits.includes(item.id) ? "exhibition" : "archive"
-  buttonElement.appendChild(createButton(`Return to the ${previous}`, () => { history.back() }))
+  buttonElement.appendChild(
+    createButton(`Return to the ${previous}`, () => {
+      history.back()
+    })
+  )
+  document.getElementById("voices").hidden = true
   buttonElement.hidden = false
   revealItem()
 }
