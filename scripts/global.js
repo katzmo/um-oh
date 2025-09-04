@@ -195,6 +195,15 @@ export default class UMOH {
   }
 
   /**
+   * Replace the list of exhibits.
+   * @param {Array[string]} items - A list of item ids.
+   */
+  updateExhibits(items) {
+    this.exhibits = items
+    localStorage.setItem(UMOH.exhibitionStore, JSON.stringify(this.exhibits))
+  }
+
+  /**
    * Loads statistics from localStorage if available.
    */
   loadStats() {

@@ -22,3 +22,12 @@
   max-height: 33vh;
   object-fit: contain;
 }
+
+/* draggable elements */
+.sortable[draggable="true"] {
+  cursor: grab;
+}
+.sortgable:active,
+.sortable.grabbed {
+  cursor: grabbing;
+}
