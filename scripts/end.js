@@ -7,8 +7,7 @@ const storyElement = document.getElementById("story")
 
 // Return to the archive if no items have been discovered yet.
 if (!itemsFound) {
-  localStorage.setItem("umho_current", 0)
-  window.location.href = "archive.html"
+  window.location.href = "archive.html?room=1"
 }
 
 // Story branches

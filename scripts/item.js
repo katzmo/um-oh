@@ -151,7 +151,9 @@ decisionForm.addEventListener("submit", (event) => {
   umho.updateStats({ trialAndError, inputLength, copyPaste, spentTime, edits })
   // Redirect to the exhibition or the archive.
   window.location.href =
-    event.submitter.value === "display" ? "exhibition.html" : "archive.html"
+    event.submitter.value === "display"
+      ? "exhibition.html"
+      : `archive.html?room=${umho.findRoomForItem(item.id)}`
 })
 
 if (!isNew) {

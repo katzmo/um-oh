@@ -10,6 +10,8 @@ export default class UMOH {
   static itemsStore = "umho_items"
   static foundStore = "umho_found"
   static exhibitionStore = "umho_exhibition"
+  static roomsStore = "umho_rooms"
+  static currentRoomStore = "umho_current"
   static statsStore = "umho_stats"
 
   /**
@@ -68,6 +70,8 @@ export default class UMOH {
     this.items = this.loadItems()
     this.foundItems = this.loadFound()
     this.exhibits = this.loadExhibits()
+    this.rooms = this.loadRooms()
+    this.currentRoom = this.loadCurrentRoomId()
     this.stats = this.loadStats()
   }
 
@@ -119,9 +123,9 @@ export default class UMOH {
    * Extracts the item ID from the current URL‘s "item" query parameter.
    * @returns {string|null} - The item ID or null if not present.
    */
-  getIdFromParams() {
+  getIdFromParams(id = "key") {
     const params = new URLSearchParams(document.location.search)
-    return params.get("key")
+    return params.get(id)
   }
 
   /**
@@ -201,6 +205,65 @@ export default class UMOH {
   updateExhibits(items) {
     this.exhibits = items
     localStorage.setItem(UMOH.exhibitionStore, JSON.stringify(this.exhibits))
+  }
+
+  /**
+   * Load room items from localStorage if available.
+   */
+  loadRooms() {
+    const items = localStorage.getItem(UMOH.roomsStore)
+    if (items) {
+      return JSON.parse(items)
+    }
+    return []
+  }
+
+  /**
+   * Find the room for an item.
+   * @param {string} itemId - The item ID.
+   * @returns {number} - The room ID.
+   */
+  findRoomForItem(itemId) {
+    return this.rooms.findIndex((room) => room && room.includes(itemId))
+  }
+
+  /**
+   * Save an item list to a room.
+   * @param {number} id - The room ID.
+   * @param {Array[string]} items - The list of items.
+   */
+  saveRoom(id, items) {
+    this.rooms[id] = items
+    localStorage.setItem(UMOH.roomsStore, JSON.stringify(this.rooms))
+  }
+
+  /**
+   * Load current room ID from localStorage if available.
+   */
+  loadCurrentRoomId() {
+    const room = localStorage.getItem(UMOH.currentRoomStore)
+    if (room) {
+      return JSON.parse(room)
+    }
+    return 1
+  }
+
+  /**
+   * Set the current room to the room ID.
+   * If no ID is provided, attempts to extract it from the URL parameters.
+   * @param {number} [id] - The room ID.
+   * @returns {number} - The current room ID.
+   */
+  setCurrentRoom(id) {
+    id ??= this.getIdFromParams("room")
+    if (id) {
+      this.currentRoom = parseInt(id)
+      localStorage.setItem(
+        UMOH.currentRoomStore,
+        JSON.stringify(this.currentRoom)
+      )
+    }
+    return this.currentRoom
   }
 
   /**

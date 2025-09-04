@@ -3,26 +3,33 @@ import UMOH from "./global.js"
 const umho = new UMOH()
 
 const rooms = [
-  {name: "Storage 1: Ancient Origins", items: ["vn7f", "clv2", "khn9", "atm3"]},
-  {name: "Storage 2: Imperial Legacies", items: ["tra5", "rst4", "shb1", "mzh7"]},
-  {name: "Storage 3: Modern Icons", items: ["mls2", "mlv8", "bwf3", "iph0"]},
+  {}, // dummy room to start with index 1
+  {
+    name: "Storage 1: Ancient Origins",
+    items: ["vn7f", "clv2", "khn9", "atm3"],
+  },
+  {
+    name: "Storage 2: Imperial Legacies",
+    items: ["tra5", "rst4", "shb1", "mzh7"],
+  },
+  { name: "Storage 3: Modern Icons", items: ["mls2", "mlv8", "bwf3", "iph0"] },
 ]
 const itemsPerRoom = 4
-const currentRoom = parseInt(localStorage.getItem("umho_current")) || 0
+const currentRoom = umho.setCurrentRoom()
 
 if (currentRoom >= rooms.length) {
   // No more rooms left, game is over.
   window.location.href = "end.html"
 }
 
-const loadRooms = () => {
-  const rooms = localStorage.getItem("umho_rooms")
-  if (rooms) {
-    return JSON.parse(rooms)
-  }
-  return null
+// Ensure a consistent browser history
+if (!window.location.search) {
+  history.replaceState(
+    history.state,
+    "",
+    `${window.location.href}?room=${currentRoom}`
+  )
 }
-const savedRooms = loadRooms() ?? rooms.map(() => null)
 
 // Set page title.
 const titleElement = document.getElementById("title")
@@ -30,12 +37,11 @@ titleElement.textContent = rooms[currentRoom].name
 
 // Render archive boxes.
 const roomElement = document.getElementById("room")
-let room = savedRooms[currentRoom]
+let room = umho.rooms[currentRoom]
 if (!room) {
   const itemPool = rooms[currentRoom].items.toSorted(() => Math.random() - 0.5)
   room = itemPool.slice(0, itemsPerRoom)
-  savedRooms[currentRoom] = room
-  localStorage.setItem("umho_rooms", JSON.stringify(savedRooms))
+  umho.saveRoom(currentRoom, room)
 }
 for (const item of room) {
   const boxElement = document.createElement("div")
@@ -59,7 +65,6 @@ roomElement.querySelectorAll(".box").forEach((box) => {
     }
   })
 })
-roomElement.querySelector(".door").addEventListener("click", (event) => {
-  localStorage.setItem("umho_current", currentRoom + 1)
-  window.location.href = `archive.html`
+roomElement.querySelector(".door").addEventListener("click", () => {
+  window.location.href = `archive.html?room=${currentRoom + 1}`
 })
