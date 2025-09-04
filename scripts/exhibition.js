@@ -6,21 +6,12 @@ const exhibitionElement = document.getElementById("exhibition")
 const createExhibit = (item) => {
   return `
   <div class="exhibit">
-    <figure>
+    <a href="item.html?key=${item.id}">
       <img
         src="${item.image.url}"
         alt="${item.name}"
       />
-      <figcaption>
-        ${item.image.caption}
-      </figcaption>
-    </figure>
-    <div>
-      <h2>${item.name}</h2>
-      <p>
-        ${item.description}
-      </p>
-    </div>
+    </a>
   </div>
 `
 }

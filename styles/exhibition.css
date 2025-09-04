@@ -1,0 +1,24 @@
+/* 
+ * Exhibition page styles
+ */
+
+#exhibition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: min(2vw, 2rem);
+  align-items: center;
+}
+
+.exhibit {
+  border: 0.125rem solid var(--fg-color);
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.exhibit a {
+  display: block;
+  line-height: 0;
+}
+.exhibit img {
+  max-height: 33vh;
+  object-fit: contain;
+}
