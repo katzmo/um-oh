@@ -29,16 +29,14 @@ section {
 }
 .box.open {
   background: url("../icons/archive-box-open.svg") no-repeat center;
-  transition: none;
-  cursor: inherit;
 }
 .box.void {
   background: none;
   transition: none;
   cursor: inherit;
 }
-.box:not(.open):hover,
-.box:not(.open):focus {
+.box:not(.void):hover,
+.box:not(.void):focus {
   padding: 0.25rem 0.25rem 0 0;
   margin: 0.75rem 0.75rem 0 1rem;
 }

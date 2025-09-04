@@ -1,3 +1,7 @@
+import UMOH from "./global.js"
+
+const umho = new UMOH()
+
 const rooms = [
   {name: "Storage 1: Ancient Origins", items: ["vn7f", "clv2", "khn9", "atm3"]},
   {name: "Storage 2: Imperial Legacies", items: ["tra5", "rst4", "shb1", "mzh7"]},
@@ -18,27 +22,7 @@ const loadRooms = () => {
   }
   return null
 }
-
 const savedRooms = loadRooms() ?? rooms.map(() => null)
-
-const saveRooms = () => {
-  localStorage.setItem("umho_rooms", JSON.stringify(savedRooms))
-}
-
-const saveRoom = (current) => {
-  current ??= currentRoom
-  savedRooms[current] = roomElement.innerHTML
-  saveRooms()
-}
-
-const openBox = (event) => {
-  event.target.classList.add("open")
-  const item = event.target.dataset.item
-  if (item) {
-    saveRoom()
-    window.location.href = `item.html?key=${item}`
-  }
-}
 
 // Set page title.
 const titleElement = document.getElementById("title")
@@ -46,18 +30,23 @@ titleElement.textContent = rooms[currentRoom].name
 
 // Render archive boxes.
 const roomElement = document.getElementById("room")
-let currentHtml = savedRooms[currentRoom]
-if (currentHtml) {
-  roomElement.innerHTML = currentHtml
-} else {
+let room = savedRooms[currentRoom]
+if (!room) {
   const itemPool = rooms[currentRoom].items.toSorted(() => Math.random() - 0.5)
-  const room = itemPool.slice(0, itemsPerRoom)
-  for (const item of room) {
-    const boxElement = document.createElement("div")
-    boxElement.classList.add("box")
-    boxElement.dataset.item = item
-    roomElement.prepend(boxElement)
+  room = itemPool.slice(0, itemsPerRoom)
+  savedRooms[currentRoom] = room
+  localStorage.setItem("umho_rooms", JSON.stringify(savedRooms))
+}
+for (const item of room) {
+  const boxElement = document.createElement("div")
+  boxElement.dataset.item = item
+  boxElement.classList.add("box")
+  if (umho.exhibits.includes(item)) {
+    boxElement.classList.add("void")
+  } else if (umho.getFound(item)) {
+    boxElement.classList.add("open")
   }
+  roomElement.prepend(boxElement)
 }
 
 // Add event handlers.
@@ -66,13 +55,11 @@ roomElement.querySelectorAll(".box").forEach((box) => {
     box.classList.add("open")
     const item = box.dataset.item
     if (item) {
-      saveRoom()
       window.location.href = `item.html?key=${item}`
     }
   })
 })
 roomElement.querySelector(".door").addEventListener("click", (event) => {
-  saveRoom()
   localStorage.setItem("umho_current", currentRoom + 1)
   window.location.href = `archive.html`
 })
