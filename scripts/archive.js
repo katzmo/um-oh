@@ -3,7 +3,7 @@ const rooms = [
   {name: "Storage 2: Imperial Legacies", items: ["tra5", "rst4", "shb1", "mzh7"]},
   {name: "Storage 3: Modern Icons", items: ["mls2", "mlv8", "bwf3", "iph0"]},
 ]
-const itemsPerRoom = 2
+const itemsPerRoom = 4
 const currentRoom = parseInt(localStorage.getItem("umho_current")) || 0
 
 if (currentRoom >= rooms.length) {
@@ -51,21 +51,12 @@ if (currentHtml) {
   roomElement.innerHTML = currentHtml
 } else {
   const itemPool = rooms[currentRoom].items.toSorted(() => Math.random() - 0.5)
-  let boxCount = 6 + 2 * currentRoom
-  let randomBoxes = new Set()
-  while (randomBoxes.size < itemsPerRoom) {
-    randomBoxes.add(Math.floor(Math.random() * boxCount))
-  }
-  while (boxCount) {
-    boxCount--
+  const room = itemPool.slice(0, itemsPerRoom)
+  for (const item of room) {
     const boxElement = document.createElement("div")
     boxElement.classList.add("box")
-    if (randomBoxes.has(boxCount)) {
-      boxElement.dataset.item = itemPool.pop()
-    }
-
+    boxElement.dataset.item = item
     roomElement.prepend(boxElement)
-    // Todo: randomly add random items
   }
 }
 
