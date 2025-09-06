@@ -4,6 +4,15 @@
 
 @import "./drag.css";
 
+#item-labels {
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  padding: 1rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  max-width: 40rem;
+}
+
 #item-choices button {
   width: 100%;
 }
@@ -53,9 +62,6 @@
 }
 
 @media screen and (min-width: 60em) {
-  #item-choices button {
-    width: 50%;
-  }
   .exhibit {
     flex-wrap: nowrap;
   }
