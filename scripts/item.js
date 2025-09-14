@@ -3,10 +3,19 @@ import initDrag from "./drag.js"
 
 const umho = new UMOH()
 let item = umho.getFound()
-const isNew = !item
+let isNew = !item
+let isEditable = true
 let startTime = new Date().getTime()
 let trialAndError = 0
 let copyPaste = 0
+
+const descriptionFromParams = umho.getIdFromParams("description")
+if (descriptionFromParams) {
+  item = await umho.getItem()
+  item.description = descriptionFromParams
+  isNew = false
+  isEditable = false
+}
 
 const createButton = (label, onClick) => {
   const btn = document.createElement("button")
@@ -159,19 +168,24 @@ decisionForm.addEventListener("submit", (event) => {
 if (!isNew) {
   // Show item info immediately + buttons.
   const buttonElement = document.getElementById("buttons")
-  buttonElement.appendChild(
-    createButton("Change your mind about the artifact", () => {
-      buttonElement.hidden = true
-      decisionForm.querySelector("textarea").innerHTML = item.description
-      revealInput(300)
-      startTime = new Date().getTime()
-    })
-  )
+  if (isEditable) {
+    buttonElement.appendChild(
+      createButton("Change your mind about the artifact", () => {
+        buttonElement.hidden = true
+        decisionForm.querySelector("textarea").innerHTML = item.description
+        revealInput(300)
+        startTime = new Date().getTime()
+      })
+    )
+  }
   const previous = umho.exhibits.includes(item.id) ? "exhibition" : "archive"
   buttonElement.appendChild(
-    createButton(`Return to the ${previous}`, () => {
-      history.back()
-    })
+    createButton(
+      `Return to the ${isEditable ? previous : "exhibition"}`,
+      () => {
+        history.back()
+      }
+    )
   )
   document.getElementById("voices").hidden = true
   buttonElement.hidden = false

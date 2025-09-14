@@ -73,6 +73,9 @@
     justify-content: space-between;
     flex-direction: row-reverse;
   }
+  #buttons button:last-child {
+    margin-right: auto;
+  }
   #dropzones-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
