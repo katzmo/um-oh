@@ -47,4 +47,4 @@ The endings are configured in `scripts/exhibition.js`. You can edit the existing
 
 ## Credits
 
-Developed by Katharina Zwinger at the University of Vienna.
+Developed by Katharina Zwinger at the University of Vienna, 2025. Licensed under CC BY-NC 4.0.
